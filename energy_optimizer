@@ -1,0 +1,15 @@
+# energy_optimizer.py
+
+def calculate_energy_consumption(houses, avg_consumption, solar_efficiency):
+    total_consumption = houses * avg_consumption
+    solar_generation = houses * solar_efficiency * 5  # 5 hrs/day of sunlight
+    if solar_generation >= total_consumption:
+        return "Fully sustainable!"
+    else:
+        return f"Needs {total_consumption - solar_generation} kWh more energy."
+
+# Sample usage
+houses = 10
+avg_consumption = 30  # kWh/day
+solar_efficiency = 3  # kWh/day per house
+print(calculate_energy_consumption(houses, avg_consumption, solar_efficiency))
